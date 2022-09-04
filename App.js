@@ -1,33 +1,26 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import LoginScreen from './src/Screens/LoginScreen';
+import CategoryScreen from './src/Screens/CategoryScreen';
+import HomeScreen from './src/Screens/HomeScreen';
+import UploadScreen from './src/Screens/UploadScreen';
+import AlertScreen from './src/Screens/AlertScreen';
+import SettingsScreen from './src/Screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
+        <Tab.Navigator>
+            <Tab.Screen name="Login" component={LoginScreen} />
+
+        </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;
